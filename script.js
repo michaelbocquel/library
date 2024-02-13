@@ -2,6 +2,8 @@
 
 const myLibrary = []
 
+// Book Constructor
+
 function Book(title, author, pages, isRead) {
 	this.title = title
 	this.author = author
@@ -13,15 +15,15 @@ const bookContainer = document.querySelector('.book-container')
 const newBookButton = document.querySelector('.new-book-button')
 const newBookForm = document.querySelector('.new-book-form')
 
-
-
 newBookButton.addEventListener('click', () => { newBookForm.showModal() })
 
 // Book Objects
 
 const riveGauche = new Book('Rive Gauche', 'Pierre Bordage', 601, true)
-const riveDroite = new Book('Rive Droite', 'Pierre Bordage', 567, true)
-myLibrary.push(riveGauche, riveDroite)
+const riveDroite = new Book('Rive Droite', 'Pierre Bordage', 567, false)
+const toutEstFoutu = new Book('Tout est Foutu', 'Mark Manson', 247, true)
+const lArtSubtilDeSEnFoutre = new Book(`L'art subtil de s'en foutre`, 'Mark Manson', 186, true)
+myLibrary.push(riveGauche, riveDroite, toutEstFoutu, lArtSubtilDeSEnFoutre)
 
 console.log(myLibrary)
 
@@ -30,9 +32,21 @@ console.log(myLibrary)
 function createBook() {
 	for (let i = 0; i < myLibrary.length; i++) {
 		const bookCard = document.createElement('div')
-		bookCard.style.width = '150px'
-		bookCard.style.height = '230px'
-		bookCard.style.backgroundColor = 'red'
+		bookCard.classList.add('book-card')
+		const bookCardCover = bookCard.appendChild(document.createElement('div'))
+		bookCardCover.style.width = '150px'
+		bookCardCover.style.height = '230px'
+		bookCardCover.style.backgroundColor = 'red'
+		const bookCardDescription = bookCard.appendChild(document.createElement('div'))
+		bookCardDescription.classList.add('book-card-description')
+		const bookCardDescriptionTitle = bookCardDescription.appendChild(document.createElement('p'))
+		bookCardDescriptionTitle.textContent = `Title : ${myLibrary[i].title}`
+		const bookCardDescriptionAuthor = bookCardDescription.appendChild(document.createElement('p'))
+		bookCardDescriptionAuthor.textContent = `Author : ${myLibrary[i].author}`
+		const bookCardDescriptionPages = bookCardDescription.appendChild(document.createElement('p'))
+		bookCardDescriptionPages.textContent = `Pages : ${myLibrary[i].pages}`
+		const bookCardDescriptionIsRead = bookCardDescription.appendChild(document.createElement('p'))
+		myLibrary[i].isRead ? bookCardDescriptionIsRead.textContent = `Of course i've read it` : bookCardDescriptionIsRead.textContent = `It is not read yet`
 		bookContainer.insertBefore(bookCard, newBookButton)
 	}
 }
