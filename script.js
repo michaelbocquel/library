@@ -23,7 +23,9 @@ const riveGauche = new Book('Rive Gauche', 'Pierre Bordage', 601, true)
 const riveDroite = new Book('Rive Droite', 'Pierre Bordage', 567, false)
 const toutEstFoutu = new Book('Tout est Foutu', 'Mark Manson', 247, true)
 const lArtSubtilDeSEnFoutre = new Book(`L'art subtil de s'en foutre`, 'Mark Manson', 186, true)
-myLibrary.push(riveGauche, riveDroite, toutEstFoutu, lArtSubtilDeSEnFoutre)
+const auCoeurDeLEspritCritque = new Book(`Au coeur de l'esprit critique`, 'Séverine Falkowicz', 224, false)
+const neurosapiens = new Book(`Neurosapiens`, 'Anaïs Roux', 314, true)
+myLibrary.push(riveGauche, riveDroite, toutEstFoutu, lArtSubtilDeSEnFoutre, auCoeurDeLEspritCritque, neurosapiens)
 
 console.log(myLibrary)
 
