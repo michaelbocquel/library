@@ -40,11 +40,11 @@ function createBook() {
 		const bookCardDescription = bookCard.appendChild(document.createElement('div'))
 		bookCardDescription.classList.add('book-card-description')
 		const bookCardDescriptionTitle = bookCardDescription.appendChild(document.createElement('p'))
-		bookCardDescriptionTitle.textContent = `Title : ${myLibrary[i].title}`
+		bookCardDescriptionTitle.textContent = `${myLibrary[i].title}`
 		const bookCardDescriptionAuthor = bookCardDescription.appendChild(document.createElement('p'))
-		bookCardDescriptionAuthor.textContent = `Author : ${myLibrary[i].author}`
+		bookCardDescriptionAuthor.textContent = `${myLibrary[i].author}`
 		const bookCardDescriptionPages = bookCardDescription.appendChild(document.createElement('p'))
-		bookCardDescriptionPages.textContent = `Pages : ${myLibrary[i].pages}`
+		bookCardDescriptionPages.textContent = `${myLibrary[i].pages} pages`
 		const bookCardDescriptionIsRead = bookCardDescription.appendChild(document.createElement('p'))
 		myLibrary[i].isRead ? bookCardDescriptionIsRead.textContent = `Of course i've read it` : bookCardDescriptionIsRead.textContent = `It is not read yet`
 		bookContainer.insertBefore(bookCard, newBookButton)
