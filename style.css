@@ -21,6 +21,21 @@ body {
 	gap: 20px;
 }
 
+.book-card {
+	display: flex;
+}
+
+.book-card-description {
+	width: 200px;
+	height: 230px;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	background-color: green;
+}
+
 .new-book-form {
 	position: absolute;
 	width: 500px;
